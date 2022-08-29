@@ -43,9 +43,9 @@ ul{
 a{
     text-decoration: none;
 }
-/* cambio de color, fondo y fuente */
+/* cambio de color, fondo y gradientes*/
 .menu-footer {
-    background-color: rgba(24, 163, 178, 0.614);
+    background-image: linear-gradient(to left, rgb(9, 237, 253), rgb(26, 16, 226));
     font-family: 'Open Sans', sans-serif;
     color: rgba(252, 246, 246, 0.834);
     padding: 10px;
@@ -57,16 +57,15 @@ a{
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    
 }
 .menu-horizontal > li > a{
     display: block;
     padding: 15px 20px;
     color: white;
-    transition: all 2s;
 }
 .menu-horizontal > li:hover{
     background-color: rgba(36, 13, 240, 0.738);
+    transition: all 1s;
 }
 .menu-vertical{
     position: absolute;
@@ -79,6 +78,7 @@ a{
 }
 .menu-vertical > li:hover{
     background-color: rgba(15, 204, 233, 0.608);
+    transition: all 1s;
 }
 .menu-vertical > li > a{
     display: block;
@@ -105,6 +105,11 @@ img {
 /* Tamaño de logo */
 .logo a img{
     height: 100px;
+    transition: all 2s;
+}
+/* Transition de logo */
+.logo a img:hover{
+    height: 110px;
 }
 
 /* MEDIAQUERIE DESKTOP */
