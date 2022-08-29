@@ -1,0 +1,187 @@
+/*Reseteo */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuente */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/* font-family: 'Open Sans', sans-serif;*/
+/* fondo de la web */
+.fondo{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../assets/img/fonde.jpg);
+    background-attachment: fixed;
+}
+/*flexbox para acomodar contenido de header y footer */
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/*personalizando la nav */
+nav{
+    display: block;
+    max-width: 700px;
+    background-color: rgba(51, 51, 51, 0.581);
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* cambio de color, fondo y fuente */
+.menu-footer {
+    background-color: rgba(24, 163, 178, 0.614);
+    font-family: 'Open Sans', sans-serif;
+    color: rgba(252, 246, 246, 0.834);
+    padding: 10px;
+}
+/*Barra de navegacion del menu*/
+.menu-horizontal{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+.menu-horizontal > li > a{
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    transition: all 2s;
+}
+.menu-horizontal > li:hover{
+    background-color: rgba(36, 13, 240, 0.738);
+}
+.menu-vertical{
+    position: absolute;
+    display: none;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.533);
+}
+.menu-horizontal li:hover .menu-vertical{
+    display: block;
+}
+.menu-vertical > li:hover{
+    background-color: rgba(15, 204, 233, 0.608);
+}
+.menu-vertical > li > a{
+    display: block;
+    padding: 15px 20px;
+    color: white;
+}
+/*Cambio de fuente a titulo y parrafo */
+.titulo{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    color: rgb(92, 12, 231);
+}
+.parrafo{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: white;
+    background-color: rgba(59, 55, 55, 0.558);
+}
+/*Correccion de tamaño de imagen*/
+img {
+    max-width: 100%;
+    height: auto;
+}
+/* Tamaño de logo */
+.logo a img{
+    height: 100px;
+}
+
+/* MEDIAQUERIE DESKTOP */
+@media screen and (min-width: 761px) {
+    /* Adaptacion del contenido */
+    .contenido {
+        display: grid;
+        grid-template-areas: 
+        "titulo titulo"
+        "imagen parrafo";
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto;
+    }
+    .titulo{
+        grid-area: titulo;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .imagen{grid-area: imagen;}
+    .parrafo{grid-area: parrafo;}
+    
+    .contenidoContacto{
+        display: grid;
+        grid-template-areas: 
+        "t1 t2"
+        "p1 p2"
+        "formu ubi";
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto auto;
+    }
+    .t1{grid-area: t1;}
+    .t2{grid-area: t2;}
+    .p1{grid-area: p1;}
+    .p2{grid-area: p2;}
+    .formu{grid-area: formu;}
+    .ubi{grid-area: ubi;}
+}
+/* MEDIAQUERIE MOBILE */
+@media screen and (max-width: 760px) {
+    /* Adaptacion del contenido */
+    .contenido {
+        display: grid;
+        grid-template-areas: 
+        "titulo"
+        "parrafo"
+        "imagen";
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto;
+    }
+    .titulo{
+        grid-area: titulo;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-size: 20px;
+    }
+    .imagen{grid-area: imagen;}
+    .parrafo{grid-area: parrafo;}
+    /* Adaptacion de la nav y el logo*/
+    .menu-grid{
+        display: grid;
+        grid-template-areas: 
+        "logo"
+        "menu";
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+    }
+    .logo{
+        grid-area: logo;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .menu{grid-area: menu;}
+    /* Tamaño de logo */
+    .logo a img{
+        height: 70px;
+    }
+}
